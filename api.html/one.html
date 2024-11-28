@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima impedit totam 
+    velit saepe! Earum optio ipsa dignissimos sunt distinctio qui molestiae necessitatibus 
+    aliquam sequi? Perspiciatis at ullam odit totam deleniti?
+</body>
+<script>
+    const requestUrl='https://api.github.com/users/hiteshchoudhary'
+    const xhr= new XMLHttpRequest() // it requier a new object so we created it
+    xhr.open('GET',requestUrl) // to send this request we need to use open here and send it to use it
+    // it takes a function like on readystatechange perform this operation
+    xhr.onreadystatechange= function(){
+        console.log(xhr.readyState);  
+        if(xhr.readyState===4){
+            console.log(this.responseText);
+            
+        } 
+    }
+    xhr.send();// thie sends this request
+</script>
+</html>
