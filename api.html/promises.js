@@ -72,4 +72,37 @@ const promiseFive=new Promise(function(resolve,reject){
 // it watis for sometime to work to be completed and then waits therr and throws error
 //the issue is we cant gracefully catch 
 
+async function consumePromiseFive(){
+    try{
+ const response=await promiseFive()// ouyput of await is an object so we need to store it in a const
+ console.log(response);
+    }
+    catch{
+        console.log(error);
+        
+    }
+}
+
+consumePromiseFive()
+   
+async function getAllUsers(){
+ try {
+  const response=await fetch('https://jsonplaceholder.typicode.com/users')
+  const data= await response.json()
+  console.log(data);
+ } catch (error) {
+    console.log("E:",error);
     
+}
+  }
+getAllUsers()
+
+fetch('https://jsonplaceholder.typicode.com/users')
+.then((response)=>{
+    return response.json
+})
+.then((data)=>{
+    console.log(data);
+})
+.catch((error)=>console.log(error))
+
