@@ -106,3 +106,15 @@ fetch('https://jsonplaceholder.typicode.com/users')
 })
 .catch((error)=>console.log(error))
 
+//their isa microtask priority queue which gets executed in the top most priority
+// on execution fetch gets divided into two parts first is data part variables   in memory reserve and the other one is web browser or the node
+// data is onfulfilled and on rejection  which both are arrays that is resolve and reject
+// and we are not allowed to directly add values in to these arrays
+// these both are privaate fields and the data is also private
+
+// web browser  requires a resoure to send an api request 
+// network request will either bring the data or not if it brings it goes to onfield that is resolved and if no data it goes to onrejection
+//all the errors even 404 data goes and counts into onfulfilled 
+// data value is initially empty
+//on fulfilled and on rejection both have functions which are required for moving data from request to data field
+// data should fulfill response
