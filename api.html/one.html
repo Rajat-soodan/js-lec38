@@ -17,7 +17,7 @@
     // it takes a function like on readystatechange perform this operation
     xhr.onreadystatechange= function(){
         console.log(xhr.readyState);  
-        if(xhr.readyState===4){
+        if(xhr.readyState===4){// url data send type is string which is being converted to object here for traversel
             const data=JSON.parse(this.responseText);//json.parse converts string to object
             console.log( typeof data);
             
