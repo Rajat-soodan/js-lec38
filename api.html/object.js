@@ -10,6 +10,21 @@ console.log(multipleBy5.power);
 console.log(multipleBy5.prototype); //output{} funciton is function and object only 
 // by default prototype has some methods and{} it is the this of that  prototype 
 function createUser(username,score){
-    this.uername=username
+    this.username=username
+    this.score=score
 }
 
+createUser.prototype.increment=function(){
+    this.score++;// the onle who called go to that
+// jisne bulaya hai uska kaam krdo current context meh
+}
+createUser.prototype.printMe=function(){
+    console.log(`score is ${this.score}`);
+    
+}
+// here function score++ doesnot knows which const to be called here
+// who called it it doesnot have a context here
+const chai= new createUser("chai",25)
+const tea=new     createUser("tea",250)
+
+chai.printMe()
