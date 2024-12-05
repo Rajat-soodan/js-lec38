@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body>
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+    <script>
+        // function init(){
+        //    var name="mozilla";
+        //    function displayname(){
+        //     console.log(name);
+        //    } 
+        //    displayName();
+        // }
+        // init();
+        // function outer(){
+        //     let username="hiteiw"
+        //     function inner(){
+        //         let scret ="my123"
+        //         console.log("inner",usrname);
+        //     }
+        //     function innerTwo(){
+        //         console.log("inner two",username);
+                
+        //     }
+        //     inner()
+        //     innerTwo()
+        // }
+        // outer()
+        // console.log("TOO OUTER",username);
+
+        // function makeFunc(){
+        //     const name="Mozilla";
+        //     function displayName(){
+        //         console.log(name);
+        //     }
+        //     return displayName
+        // }
+        // const myFunc=makeFunc();
+        // myFunc();
+
+//here if we call displayName() then the whole execution context is forwarded to the return statement
+// not only the single child is forewarded
+// outer function inner funciton closure means when a function is returned not only the function
+// then its lexicsl scope is also returned as  a whole
+
+    </script>
+    <script>
+        // document.getElementById("orange").onclick=function(){
+        //     document.body.style.backgroundColor=`orange`
+        // }
+        // document.getElementById("green").onclick=function(){
+        //     document.body.style.backgroundColor=`green`
+        // }
+
+        function clickhandler(color){
+            document.body.style.backgroundColor=`${color}`
+        }
+
+        document.getElementById(`orange`).onclick=clickhandler()
+
+
+    </script>
+
+</html>
