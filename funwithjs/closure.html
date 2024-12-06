@@ -59,10 +59,12 @@
         // }
 
         function clickhandler(color){
-            document.body.style.backgroundColor=`${color}`
-        }
+           
+            return function() {document.body.style.backgroundColor=`${color}`
+        } // lexcial scopinf and closure comes to play as return fnction has access to complete function as a whole in closure
+    }
 
-        document.getElementById(`orange`).onclick=clickhandler()
+        document.getElementById(`orange`).onclick=clickhandler("orange ")
 
 
     </script>
